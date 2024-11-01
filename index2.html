@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>บริษัทน้ำเปล่า</title>
+    <link href="style2.css" rel="stylesheet" type="text/css">
+</head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Company Database</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>ฐานข้อมูลบริษัทน้ำเปล่า</h1>
+        <nav>
+            <a href="/product">Product</a>
+            <a href="/orders">Orders</a>
+            <a href="/customers">Customers</a>
+            <a href="/payment">Payment</a>
+            <a href="/sales">Sales</a>
+            <a href="/supply_chain">Supply Chain</a>
+            <a href="/transport">Transport</a>
+        </nav>
+        <div class="content">
+            <p>ยินดีต้อนรับสู่ฐานข้อมูลของบริษัทน้ำเปล่า</p>
+            <p>เลือกหมวดหมู่เพื่อดูข้อมูล</p>
+        </div>
+    </div>
+</body>
+<body>
+    <h1>Product</h1>
+<form id="productForm">
+<input type="number" id="Product_Id" placeholder="Product_Id">
+<input type="text" id="Product_name" placeholder="Product_name">
+<input type="number" id="Product_Price" placeholder="Product_Price">
+<input type="number" id="Stock" placeholder="Stock">
+<input type="number" id="Product_cost" placeholder="Product_cost">
+<button type="submit">Find Product</button>
+</form>
+<table id="productList">
+<tr>
+<th>Product_Id</th>
+<th>Product_name</th>
+<th>Product_Price</th>
+<th>Stock</th>
+<th>Product_cost</th>
+</tr>
+</table>
+<br>
+<h2>Orders</h2>
+<form id="ordersForm">
+<input type="number" id="Order_Id" placeholder="Order_Id">
+<input type="number" id="Order_Customer_Id" placeholder="Customer_Id">
+<input type="number" id="Order_Payment_Id" placeholder="Payment_Id">
+<input type="text" id="Order_Date" placeholder="Order_Date">
+<input type="text" id="Order_Status" placeholder="Order_Status">
+<button type="submit">Find Order</button>
+</form>
+<table id="ordersList">
+<tr>
+<th>Order_Id</th>
+<th>Customer_Id</th>
+<th>Payment_Id</th>
+<th>Order_Date</th>
+<th>Order_Deadline</th>
+<th>Order_Month</th>
+<th>Order_Year</th>
+<th>Product_Id</th>
+<th>Order_Count</th>
+<th>Order_Price</th>
+<th>Order_Status</th>
+</tr>
+</table>
+<br>
+<h2>Customers</h2>
+<form id="customersForm">
+<input type="number" id="Customer_Id" placeholder="Customer_Id">
+<input type="text" id="FirstName" placeholder="FirstName">
+<input type="text" id="LastName" placeholder="LastName">
+<input type="email" id="Email" placeholder="Email">
+<input type="tel" id="Phone_number" placeholder="Phone_number">
+<input type="tel" id="Address" placeholder="Address">
+<button type="submit">Find Customer</button>
+</form>
+<table id="customersList">
+<tr>
+<th>Customer_Id</th>
+<th>FirstName</th>
+<th>LastName</th>
+<th>Email</th>
+<th>Phone_number</th>
+<th>Address</th>
+</tr>
+</table>
+<br>
+<h2>Payments</h2>
+<form id="paymentForm">
+<input type="number" id="Payment_Id" placeholder="Payment_Id">
+<input type="number" id="Payment_Customer_Id" placeholder="Customer_Id">
+<input type="number" id="Sales_Id" placeholder="Sales_Id">
+<input type="number" id="Total_Price" placeholder="Total_Price">
+<input type="number" id="Payment_Date" placeholder="Payment_Date">
+<button type="submit">Find Payment</button>
+</form>
+<table id="paymentList">
+<tr>
+<th>Payment_Id</th>
+<th>Customer_Id</th>
+<th>Sales_Id</th>
+<th>Total_Price</th>
+<th>Payment_Date</th>
+</tr>
+</table>
+<br>
+<h2>Sales</h2>
+<form id="salesForm">
+<input type="number" id="Sales_Id" placeholder="Sales Id">
+<input type="number" id="Product_Id" placeholder="Product_Id">
+<input type="number" id="Sale_Count" placeholder="Sale_Count">
+<input type="number" id="Sale_Price" placeholder="Sale_Price">
+<input type="number" id="Total_Profit" placeholder="Total_Profit">
+<button type="submit">Find Sales</button>
+</form>
+<table id="salesList">
+<tr>
+<th>Sales_Id</th>
+<th>Product_Id</th>
+<th>Sale_Count</th>
+<th>Sale_Pricee</th>
+<th>Total_Profit</th>
+</tr>
+</table>
+<br>
+<h2>Supply_chain</h2>
+<form id="supply_chainForm">
+<input type="number" id="Supply_chain_Id" placeholder="Supply_chain_Id">
+<input type="number" id="Transport_Id" placeholder="Transport_Id">
+<input type="text" id="Supply_chain_name" placeholder="Supply_chain_name">
+<input type="number" id="Service_fee" placeholder="Service_fee">
+<button type="submit">Find Supply_chain</button>
+</form>
+<table id="supply_chainList">
+<tr>
+<th>Supply_chain_Id</th>
+<th>Transport_Id</th>
+<th>Supply_chain_name</th>
+<th>Service_fee</th>
+</tr>
+</table>
+<br>
+<h2>Transport</h2>
+<form id="transportForm">
+<input type="number" id="Transport_Id" placeholder="Transport Id">
+<input type="number" id="Customer_Id" placeholder="Customer_Id">
+<input type="number" id="Product_Id" placeholder="Product_Id">
+<input type="number" id="Product_route_Id" placeholder="Product_route_Id">
+<input type="text" id="Transport_status" placeholder="Transport_status">
+<button type="submit">Find Transport</button>
+</form>
+<table id="transportList">
+<tr>
+<th>Transport_Id</th>
+<th>Customer_Id</th>
+<th>Product_Id</th>
+<th>Product_route_Id</th>
+<th>Transport_status</th>
+</tr>
+</table>
+    <script src="script2.js"></script>
+</body>
+</html>

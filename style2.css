@@ -1,0 +1,78 @@
+body {
+    font-family: Times New Roman, sans-serif;
+    background-color: #e1f5fe; /* เปลี่ยนพื้นหลังให้เป็นสีอ่อนเพื่อให้ดูสบายตา */
+    color: #00796b; /* สีตัวอักษรหลัก */
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    color: #0073e6; /* สีของหัวเรื่อง */
+    text-align: center;
+    padding-top: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column; /* ปรับให้เป็นแนวตั้ง */
+    align-items: center; /* จัดตำแหน่งให้ตรงกลาง */
+    margin-bottom: 15px;
+}
+
+form input, form button {
+    margin: 5px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #00796b; /* สีกรอบ */
+}
+
+form input {
+    width: 180px;
+}
+
+form button {
+    background-color: #00796b; /* สีพื้นหลังของปุ่ม */
+    color: #ffffff; /* สีตัวอักษรในปุ่ม */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #004d40; /* สีพื้นหลังของปุ่มเมื่อวางเมาส์ */
+}
+
+table {
+    width: 90%;
+    margin: 0 auto 20px auto;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+th, td {
+    border: 1px solid #00796b; /* สีกรอบของตาราง */
+    padding: 8px;
+}
+
+th {
+    background-color: #00796b; /* สีพื้นหลังของหัวตาราง */
+    color: #ffffff; /* สีตัวอักษรในหัวตาราง */
+}
+
+td {
+    background-color: #b2dfdb; /* สีพื้นหลังของเซลล์ข้อมูล */
+}
+
+/* สำหรับรายการต่าง ๆ */
+#productList, 
+#ordersList, 
+#customersList, 
+#paymentList, 
+#salesList, 
+#supply_chainList, 
+#transportList {
+    margin-top: 10px;
+    color: #00796b; /* สีของตัวอักษรในรายการ */
+    background-color: #e0f2f1; /* สีพื้นหลังของรายการ */
+    padding: 10px; /* เพิ่มพื้นที่รอบ ๆ */
+    border-radius: 5px; /* มุมโค้ง */
+}

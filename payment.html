@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ชำระเงิน</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script>
+        function loadCartItems() {
+            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            const cartList = document.getElementById('cart-list');
+            let totalAmount = 0;
+
+            cartItems.forEach(item => {
+                const li = document.createElement('li');
+                const itemTotal = item.price * item.quantity;
+                li.textContent = `${item.name} (ขนาด: ${item.size}) - ราคา: ${item.price} บาท จำนวน: ${item.quantity} - รวม: ${itemTotal} บาท`;
+                cartList.appendChild(li);
+                totalAmount += itemTotal;
+            });
+
+            const totalLi = document.createElement('li');
+            totalLi.textContent = `ยอดรวม: ${totalAmount} บาท`;
+            cartList.appendChild(totalLi);
+
+            if (cartItems.length === 0) {
+                const li = document.createElement('li');
+                li.textContent = 'ไม่มีสินค้าในตะกร้า';
+                cartList.appendChild(li);
+            }
+            sessionStorage.setItem('totalAmount', totalAmount);
+        }
+         function saveFormData() {
+        const name = document.getElementById('name').value;
+        const address = document.getElementById('address').value;
+        const paymentMethod = document.getElementById('payment-method').value;
+
+        sessionStorage.setItem('name', name);
+        sessionStorage.setItem('address', address);
+        sessionStorage.setItem('paymentMethod', paymentMethod);
+        }
+    </script>
+</head>
+<body onload="loadCartItems()">
+    <div class="container">
+    	<img src="Logo.png" alt="WATER WATER Logo" class="logo">
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="product.html">Product</a>
+            <a href="order.html">Order</a>
+            <a href="contact.html">Contact</a>
+            <a href="table.html">Database</a>
+        </nav>
+        <div class="content">
+            <h1>รายละเอียดการชำระเงิน</h1>
+            <ul id="cart-list"></ul>
+            <form action="submit_payment.html" method="post">
+                <label for="name">ชื่อ:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="address">ที่อยู่:</label>
+                <input type="text" id="address" name="address" required>
+                <label for="payment-method">วิธีการชำระเงิน:</label>
+                <select id="payment-method" name="payment-method" required>
+                    <option value="credit-card">โอนเงินธนาคาร</option>
+                    <option value="bank-transfer">บัตรเครดิต</option>
+                    <option value="bank-transfer">ชำระปลายทาง</option>
+                </select>
+                <button type="submit">ชำระเงิน</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

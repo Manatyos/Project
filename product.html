@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>รายการสินค้า - บริษัทน้ำเปล่า</title>
+    <link href="style.css" rel="stylesheet">
+    <script>
+        function addToCart(name, size, price, quantity) {
+            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            const item = { name, size, price, quantity: parseInt(quantity) }; // ทำให้แน่ใจว่า quantity เป็นตัวเลข
+            cartItems.push(item);
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            alert(`${name} ได้ถูกเพิ่มลงในตะกร้า`);
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <img src="Logo.png" alt="WATER WATER Logo" class="logo">
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="order.html">Order</a>
+            <a href="payment.html">Payment</a>
+            <a href="contact.html">Contact</a>
+            <a href="table.html">Database</a>
+        </nav>
+        <div class="content">
+            <h1>รายการสินค้า</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>ชื่อสินค้า</th>
+                        <th>ขนาด</th>
+                        <th>ราคา (บาท)</th>
+                        <th>จำนวน</th>
+                        <th>เลือกซื้อ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="product.png" alt="น้ำดื่มบริสุทธิ์ 250 มิลลิลิตร" width="50"></td>
+                        <td>น้ำดื่มบริสุทธิ์</td>
+                        <td>250 มิลลิลิตร</td>
+                        <td>5.5</td>
+                        <td><input type="number" min="1" value="1" id="qty1"></td>
+                        <td><button onclick="addToCart('น้ำดื่มบริสุทธิ์', '250 มิลลิลิตร', 5.5, document.getElementById('qty1').value)">เพิ่มลงตะกร้า</button></td>
+                    </tr>
+                    <tr>
+                        <td><img src="product.png" alt="น้ำดื่มบริสุทธิ์ 300 มิลลิลิตร" width="50"></td>
+                        <td>น้ำดื่มบริสุทธิ์</td>
+                        <td>300 มิลลิลิตร</td>
+                        <td>7</td>
+                        <td><input type="number" min="1" value="1" id="qty2"></td>
+                        <td><button onclick="addToCart('น้ำดื่มบริสุทธิ์', '300 มิลลิลิตร', 7, document.getElementById('qty2').value)">เพิ่มลงตะกร้า</button></td>
+                    </tr>
+                    <tr>
+                        <td><img src="product.png" alt="น้ำดื่มบริสุทธิ์ 330 มิลลิลิตร" width="50"></td>
+                        <td>น้ำดื่มบริสุทธิ์</td>
+                        <td>330 มิลลิลิตร</td>
+                        <td>8</td>
+                        <td><input type="number" min="1" value="1" id="qty3"></td>
+                        <td><button onclick="addToCart('น้ำดื่มบริสุทธิ์', '330 มิลลิลิตร', 8, document.getElementById('qty3').value)">เพิ่มลงตะกร้า</button></td>
+                    </tr>
+                    <tr>
+                        <td><img src="product.png" alt="น้ำดื่มบริสุทธิ์ 350 มิลลิลิตร" width="50"></td>
+                        <td>น้ำดื่มบริสุทธิ์</td>
+                        <td>350 มิลลิลิตร</td>
+                        <td>11</td>
+                        <td><input type="number" min="1" value="1" id="qty4"></td>
+                        <td><button onclick="addToCart('น้ำดื่มบริสุทธิ์', '350 มิลลิลิตร', 11, document.getElementById('qty4').value)">เพิ่มลงตะกร้า</button></td>
+                    </tr>
+                    <tr>
+                        <td><img src="product.png" alt="น้ำดื่มบริสุทธิ์ 500 มิลลิลิตร" width="50"></td>
+                        <td>น้ำดื่มบริสุทธิ์</td>
+                        <td>500 มิลลิลิตร</td>
+                        <td>10</td>
+                        <td><input type="number" min="1" value="1" id="qty5"></td>
+                        <td><button onclick="addToCart('น้ำดื่มบริสุทธิ์', '500 มิลลิลิตร', 10, document.getElementById('qty5').value)">เพิ่มลงตะกร้า</button></td>
+                    </tr>
+                    <tr>
+                        <td><img src="product.png" alt="น้ำดื่มบริสุทธิ์ 550 มิลลิลิตร" width="50"></td>
+                        <td>น้ำดื่มบริสุทธิ์</td>
+                        <td>550 มิลลิลิตร</td>
+                        <td>13</td>
+                        <td><input type="number" min="1" value="1" id="qty6"></td>
+                        <td><button onclick="addToCart('น้ำดื่มบริสุทธิ์', '550 มิลลิลิตร', 13, document.getElementById('qty6').value)">เพิ่มลงตะกร้า</button></td>
+                    </tr>
+                    <tr>
+                        <td><img src="product.png" alt="น้ำดื่มบริสุทธิ์ 600 มิลลิลิตร" width="50"></td>
+                        <td>น้ำดื่มบริสุทธิ์</td>
+                        <td>600 มิลลิลิตร</td>
+                        <td>12</td>
+                        <td><input type="number" min="1" value="1" id="qty7"></td>
+                        <td><button onclick="addToCart('น้ำดื่มบริสุทธิ์', '600 มิลลิลิตร', 12, document.getElementById('qty7').value)">เพิ่มลงตะกร้า</button></td>
+                    </tr>
+                    <tr>
+                        <td><img src="product.png" alt="น้ำดื่มบริสุทธิ์ 750 มิลลิลิตร" width="50"></td>
+                        <td>น้ำดื่มบริสุทธิ์</td>
+                        <td>750 มิลลิลิตร</td>
+                        <td>18</td>
+                        <td><input type="number" min="1" value="1" id="qty8"></td>
+                        <td><button onclick="addToCart('น้ำดื่มบริสุทธิ์', '750 มิลลิลิตร', 18, document.getElementById('qty8').value)">เพิ่มลงตะกร้า</button></td>
+                    </tr>
+                    <tr>
+                        <td><img src="product1.png" alt="น้ำดื่มบริสุทธิ์ 1 ลิตร" width="50"></td>
+                        <td>น้ำดื่มบริสุทธิ์</td>
+                        <td>1 ลิตร</td>
+                        <td>15</td>
+                        <td><input type="number" min="1" value="1" id="qty9"></td>
+                        <td><button onclick="addToCart('น้ำดื่มบริสุทธิ์', '1 ลิตร', 15, document.getElementById('qty9').value)">เพิ่มลงตะกร้า</button></td>
+                    </tr>
+                    <tr>
+                        <td><img src="product1.png" alt="น้ำดื่มบริสุทธิ์ 1.5 ลิตร" width="50"></td>
+                        <td>น้ำดื่มบริสุทธิ์</td>
+                        <td>1.5 ลิตร</td>
+                        <td>20</td>
+                        <td><input type="number" min="1" value="1" id="qty10"></td>
+                        <td><button onclick="addToCart('น้ำดื่มบริสุทธิ์', '1.5 ลิตร', 20, document.getElementById('qty10').value)">เพิ่มลงตะกร้า</button></td>
+                    <tr>
+                        <td><img src="product2.png" alt="น้ำดื่มบริสุทธิ์ 1.25 ลิตร" width="50"></td>
+                        <td>น้ำดื่มบริสุทธิ์</td>
+                        <td>1.25 ลิตร</td>
+                        <td>24</td>
+                        <td><input type="number" min="1" value="1" id="qty11"></td>
+                        <td><button onclick="addToCart('น้ำดื่มบริสุทธิ์', '1.25 มิลลิลิตร', 24, document.getElementById('qty11').value)">เพิ่มลงตะกร้า</button></td>
+                    </tr>
+                    <tr>
+                        <td><img src="product2.png" alt="น้ำดื่มบริสุทธิ์ 2 ลิตร" width="50"></td>
+                        <td>น้ำดื่มบริสุทธิ์</td>
+                        <td>2 ลิตร</td>
+                        <td>25</td>
+                        <td><input type="number" min="1" value="1" id="qty12"></td>
+                        <td><button onclick="addToCart('น้ำดื่มบริสุทธิ์', '2 ลิตร', 25, document.getElementById('qty12').value)">เพิ่มลงตะกร้า</button></td>
+                    </tr>
+                    <tr>
+                        <td><img src="product3.png" alt="1 ลิตร (แพ็ค 6 ขวด)" width="50"></td>
+                        <td>น้ำดื่มบริสุทธิ์</td>
+                        <td>1 ลิตร (แพ็ค 6 ขวด)</td>
+                        <td>85</td>
+                       <td><input type="number" min="1" value="1" id="qty13"></td>
+                        <td><button onclick="addToCart('น้ำดื่มบริสุทธิ์', '1 ลิตร (แพ็ค 6 ขวด)', 85, document.getElementById('qty13').value)">เพิ่มลงตะกร้า</button></td>
+                    </tr>
+                    <tr>
+                        <td><img src="product3.png" alt="1.5 ลิตร (แพ็ค 6 ขวด)" width="50"></td>
+                        <td>น้ำดื่มบริสุทธิ์</td>
+                        <td>1.5 ลิตร (แพ็ค 6 ขวด)</td>
+                        <td>110</td>
+                        <td><input type="number" min="1" value="1" id="qty14"></td>
+                        <td><button onclick="addToCart('น้ำดื่มบริสุทธิ์', '1.5 ลิตร (แพ็ค 6 ขวด)', 110, document.getElementById('qty14').value)">เพิ่มลงตะกร้า</button></td>
+                    </tr>
+                    <tr>
+                        <td><img src="product3.png" alt="1 ลิตร (แพ็ค 8 ขวด)" width="50"></td>
+                        <td>น้ำดื่มบริสุทธิ์</td>
+                        <td>1 ลิตร (แพ็ค 8 ขวด)</td>
+                        <td>95</td>
+                        <td><input type="number" min="1" value="1" id="qty15"></td>
+                        <td><button onclick="addToCart('น้ำดื่มบริสุทธิ์', '1 ลิตร (แพ็ค 8 ขวด)', 95, document.getElementById('qty15').value)">เพิ่มลงตะกร้า</button></td>
+                    </tr>
+                    <tr>
+                        <td><img src="product3.png" alt="1.5 ลิตร (แพ็ค 8 ขวด)" width="50"></td>
+                        <td>น้ำดื่มบริสุทธิ์</td>
+                        <td>1.5 ลิตร (แพ็ค 8 ขวด)</td>
+                        <td>120</td>
+                        <td><input type="number" min="1" value="1" id="qty16"></td>
+                        <td><button onclick="addToCart('น้ำดื่มบริสุทธิ์', '1.5 ลิตร (แพ็ค 8 ขวด)', 120, document.getElementById('qty16').value)">เพิ่มลงตะกร้า</button></td>
+                    </tr>
+                    <tr>
+                        <td><img src="product3.png" alt="500 มิลลิลิตร (แพ็ค 12 ขวด)" width="50"></td>
+                        <td>น้ำดื่มบริสุทธิ์</td>
+                        <td>500 มิลลิลิตร (แพ็ค 12 ขวด)</td>
+                        <td>115</td>
+                        <td><input type="number" min="1" value="1" id="qty17"></td>
+                        <td><button onclick="addToCart('น้ำดื่มบริสุทธิ์', '500 มิลลิลิตร (แพ็ค 12 ขวด)', 115, document.getElementById('qty17').value)">เพิ่มลงตะกร้า</button></td>
+                    </tr>
+                    <tr>
+                        <td><img src="product3.png" alt="1 ลิตร (แพ็ค 12 ขวด)" width="50"></td>
+                        <td>น้ำดื่มบริสุทธิ์</td>
+                        <td>1 ลิตร (แพ็ค 12 ขวด)</td>
+                        <td>140</td>
+                        <td><input type="number" min="1" value="1" id="qty18"></td>
+                        <td><button onclick="addToCart('น้ำดื่มบริสุทธิ์', '1 ลิตร (แพ็ค 12 ขวด)', 140, document.getElementById('qty18').value)">เพิ่มลงตะกร้า</button></td>
+                    </tr>
+                    <tr>
+                        <td><img src="product3.png" alt="500 มิลลิลิตร (แพ็ค 24 ขวด)" width="50"></td>
+                        <td>น้ำดื่มบริสุทธิ์</td>
+                        <td>500 มิลลิลิตร (แพ็ค 24 ขวด)</td>
+                        <td>210</td>
+                        <td><input type="number" min="1" value="1" id="qty19"></td>
+                        <td><button onclick="addToCart('น้ำดื่มบริสุทธิ์', '500 มิลลิลิตร (แพ็ค 24 ขวด)', 210, document.getElementById('qty19').value)">เพิ่มลงตะกร้า</button></td>
+                    </tr>                
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
