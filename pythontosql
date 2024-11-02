@@ -1,0 +1,18 @@
+import sqlite3
+
+# เชื่อมต่อกับฐานข้อมูล
+conn = sqlite3.connect('example.db')
+
+# สร้าง cursor
+cursor = conn.cursor()
+
+# ดึงข้อมูลจากตาราง
+cursor.execute("SELECT * FROM your_table")
+rows = cursor.fetchall()
+
+# แสดงข้อมูล
+for row in rows:
+    print(row)
+
+# ปิดการเชื่อมต่อ
+conn.close()
