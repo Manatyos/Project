@@ -488,8 +488,3 @@ app.get('/search-transport', (req, res) => {
         res.json(rows);
     });
 });
-
-app.post('/submit_payment', (req, res) => {
-    // ประมวลผลข้อมูลจาก req.body
-    res.send("Payment received! Thank you.");
-});
