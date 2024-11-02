@@ -1,6 +1,3 @@
-const sqlite3 = require('sqlite3').verbose();
-const db = new sqlite3.Database('./ฐานข้อมูลบริษัทน้ำเปล่า.db');
-
 async function fetchProducts() {
     const response = await fetch('/product');
     const products = await response.json();
