@@ -332,3 +332,44 @@ fetchPayment();
 fetchSales();
 fetchSupply_chain();
 fetchTransport();
+
+function handlePayment(event) {
+    event.preventDefault();  // Prevent the default form submission
+    
+    const name = document.getElementById('name').value;
+    const address = document.getElementById('address').value;
+    const paymentMethod = document.getElementById('payment-method').value;
+
+    const paymentData = { name, address, paymentMethod };
+
+    fetch('/submit_payment', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(paymentData),
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert(data.message); // Show success message from server
+        window.location.href = "thank_you.html"; // Redirect to thank you page
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.querySelector('form');
+
+    form.addEventListener('submit', (event) => {
+        // Example of custom validation
+        const name = document.getElementById('name').value;
+        const address = document.getElementById('address').value;
+        
+        if (!name || !address) {
+            alert('กรุณากรอกข้อมูลให้ครบถ้วน');
+            event.preventDefault();
+        }
+    });
+});

@@ -10,6 +10,28 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname)));
 
+// Route to render the payment page
+app.get('/payment', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'payment.html'));
+});
+
+// Route to handle form submission from payment.html
+app.post('/submit_payment', (req, res) => {
+    // Access the form data from req.body
+    const { name, address, paymentMethod } = req.body;
+
+    // (Optional) Save or process payment information here
+    console.log(`Name: ${name}, Address: ${address}, Payment Method: ${paymentMethod}`);
+
+    // Redirect to the confirmation page after processing
+    res.redirect('/payment_confirmation');
+});
+
+// Route to render the payment confirmation page
+app.get('/payment_confirmation', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'payment_confirmation.html'));
+});
+
 app.listen(port, () => {
     console.log(`Server running on http://localhost:${port}`)
 });

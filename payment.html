@@ -28,22 +28,12 @@
                 li.textContent = 'ไม่มีสินค้าในตะกร้า';
                 cartList.appendChild(li);
             }
-            sessionStorage.setItem('totalAmount', totalAmount);
-        }
-         function saveFormData() {
-        const name = document.getElementById('name').value;
-        const address = document.getElementById('address').value;
-        const paymentMethod = document.getElementById('payment-method').value;
-
-        sessionStorage.setItem('name', name);
-        sessionStorage.setItem('address', address);
-        sessionStorage.setItem('paymentMethod', paymentMethod);
         }
     </script>
 </head>
 <body onload="loadCartItems()">
     <div class="container">
-    	<img src="Logo.png" alt="WATER WATER Logo" class="logo">
+        <img src="Logo.png" alt="WATER WATER Logo" class="logo">
         <nav>
             <a href="home.html">Home</a>
             <a href="about.html">About</a>
@@ -55,16 +45,16 @@
         <div class="content">
             <h1>รายละเอียดการชำระเงิน</h1>
             <ul id="cart-list"></ul>
-            <form action="submit_payment.html" method="post">
+            <form action="payment_confirmation.html" method="post">
                 <label for="name">ชื่อ:</label>
                 <input type="text" id="name" name="name" required>
                 <label for="address">ที่อยู่:</label>
                 <input type="text" id="address" name="address" required>
                 <label for="payment-method">วิธีการชำระเงิน:</label>
                 <select id="payment-method" name="payment-method" required>
-                    <option value="credit-card">โอนเงินธนาคาร</option>
-                    <option value="bank-transfer">บัตรเครดิต</option>
-                    <option value="bank-transfer">ชำระปลายทาง</option>
+                    <option value="bank-transfer">โอนเงินธนาคาร</option>
+                    <option value="credit-card">บัตรเครดิต</option>
+                    <option value="cash-on-delivery">ชำระปลายทาง</option>
                 </select>
                 <button type="submit">ชำระเงิน</button>
             </form>
