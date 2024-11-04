@@ -29,6 +29,11 @@
                 cartList.appendChild(li);
             }
         }
+        function confirmPayment(event) {
+            event.preventDefault(); 
+            alert("ชำระเงินแล้ว");
+            event.target.submit(); 
+        }
     </script>
 </head>
 <body onload="loadCartItems()">
